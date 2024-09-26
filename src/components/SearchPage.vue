@@ -5,7 +5,7 @@
     </div>
 
     <div class="search-page__user-card">
-      <UserCard/>
+      <UserCard :selectedUser="selectedUser"/>
     </div>
   </div>
 </template>
@@ -15,12 +15,20 @@
 import SidebarComponent from "@/components/Sidebar.vue";
 import UserCard from "@/components/UserCard.vue";
 
+import {mapGetters} from 'vuex';
+
 export default {
   name: 'SearchPage',
   components: {
     UserCard,
     SidebarComponent,
-  }
+  },
+  computed: {
+    ...mapGetters(['users', 'error', 'selectedUser'])
+  },
+  created() {
+    this.$store.dispatch('fetchUsers');
+  },
 }
 </script>
 

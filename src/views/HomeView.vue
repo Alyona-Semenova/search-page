@@ -26,10 +26,8 @@ export default {
 
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); // font
 
 .home {
-  font-family: 'Montserrat', sans-serif;
   padding: 50px 50px;
   height: calc(100vh - 100px);
 
